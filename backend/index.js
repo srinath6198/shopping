@@ -14,9 +14,13 @@ app.use(cors());
 
 // Database connection with MongoDB
 // const uri = 'mongodb+srv://srinath:Srinath@10@cluster0.vrxuvo6.mongodb.net/'
-const uri = 'mongodb://localhost:27017'
 
-mongoose.connect(uri)
+// const uri = 'mongodb://localhost:27017'
+
+const PORT = process.env.PORT || 4000;
+ const dbURI = process.env.MONGODB_URI;
+
+mongoose.connect(dbURI)
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.error('MongoDB connection error:', err));
 
@@ -25,8 +29,8 @@ app.get("/", (req, res) => {
   res.send("Express App is Running");
 });
 
-app.listen(port, () => {
-  console.log(`Server Running on Port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server Running on Port ${PORT}`);
 });
 
 
