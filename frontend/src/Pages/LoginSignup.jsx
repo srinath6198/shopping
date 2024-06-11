@@ -18,7 +18,7 @@ const changeHandler = (e)=>{
   const login = async ()=>{
   console.log("Login function Executed",formData);
   let responseData;
-  await fetch('https://shopping-jiub.onrender.com/login',{
+  await fetch('http://localhost:4000/login',{
     method:'POST',
     headers:{
       Accept:'application/from-data',
@@ -39,7 +39,7 @@ const changeHandler = (e)=>{
   const signup = async ()=>{
     console.log("Signup function Executed",formData);
     let responseData;
-    await fetch('https://shopping-jiub.onrender.com/signup',{
+    await fetch('http://localhost:4000/signup',{
       method:'POST',
       headers:{
         Accept:'application/from-data',

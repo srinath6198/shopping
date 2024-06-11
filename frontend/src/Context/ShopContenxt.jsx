@@ -22,7 +22,7 @@ const ShopContextProvider = (props) =>{
        .then((data)=>setAll_Product(data))
 
        if(localStorage.getItem('auth-token')){
-        fetch('https://shopping-jiub.onrender.com/getcart',{
+        fetch('http://localhost:4000/getcart',{
             method:'POST',
             headers:{
                 Accept:'application/form-data',
@@ -37,7 +37,7 @@ const ShopContextProvider = (props) =>{
      const addToCart = (itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
         if(localStorage.getItem('auth-token')){
-          fetch('https://shopping-jiub.onrender.com/addtocart',{
+          fetch('http://localhost:4000/addtocart',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -54,7 +54,7 @@ const ShopContextProvider = (props) =>{
      const removeFromCart = (itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
         if(localStorage.getItem('auth-token')){
-            fetch('https://shopping-jiub.onrender.com/removefromcart',{
+            fetch('http://localhost:4000/removefromcart',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

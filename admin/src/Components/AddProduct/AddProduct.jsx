@@ -28,7 +28,7 @@ const AddProduct = () => {
         let formData = new FormData();
         formData.append('product',image);
 
-         await fetch('https://shopping-jiub.onrender.com/upload',
+         await fetch('http://localhost:4000/upload',
             {
                 method:'POST',
                 headers:{
@@ -40,7 +40,7 @@ const AddProduct = () => {
          if(responseData.success){
             product.image = responseData.image_url;
             console.log(product);
-            await fetch('https://shopping-jiub.onrender.com/addproduct',{
+            await fetch('http://localhost:4000/addproduct',{
                 method:'POST',
                 headers:{
                     Accept:'application/json',
