@@ -19,7 +19,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 4000;
  const dbURI = process.env.MONGODB_URI;
-
+ const secretToken = process.env.SECRET_TOKEN;
 
 mongoose.connect(dbURI)
   .then(() => console.log('MongoDB connected...'))
